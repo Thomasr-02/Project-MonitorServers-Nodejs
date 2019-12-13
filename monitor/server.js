@@ -32,7 +32,8 @@ const servers = [
 		}).catch(() => {
 			console.log(`${server.name} está fora do ar!`);
 			const message = `${server.developer.name} o ${server.name} está fora do ar, por favor faça alguma coisa o mais rápido possível!`;
-		        client.tts.enviar(process.env.THOMASR_PHONE, message,{velocidade:2, tipo_voz: "br-Vitoria"}).then(function (data) {
+
+            client.sms.enviar(process.env.THOMASR_PHONE, message).then(function (data) {
                 console.log(data)
             })
         
